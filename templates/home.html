@@ -5,13 +5,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Baloo 2' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    .main{
+        
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url("{{url_for('static', filename = 'images/wave.gif')}}");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.container{
+    margin: auto;
+  width: 50%;
+  height: 100vh;
+  padding: 10px;
+  padding-top: 50vh;
+}
+.container a{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: 28px;
+    transition: 0.3s;
+}
+
+.container a:hover{
+    color: yellow;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+ .container h6{
+     color: white;
+     font-size: 10px;
+ } 
+  .container footer{
+      padding-top: 30vh;
+      color: rgb(94, 93, 93);
+  }
+
+  .table{
+      color: white;
+      padding-top: -30vh;
+  }
+  .footer{
+      background-color: black;
+      height: 30vh;
+      width: 100%;
+  }
+</style>
+
+
 </head>
 <body>
+    <div class = "main">
+    <div class = "background"></div>
+    <center>
+        <div class = "container">
     {% if msg %}
-    {{msg}}
+    {{msg}}<br>
     {% elif message %}
-    {{ message }}
+    {{ message }}<br>
+    {% elif details %}
+ 
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">status</th>
+              <th scope="col">details</th>
+            </tr>
+          </thead>
+          <tbody>
+              
+            {% for a,b in details.val().items() %}
+        <tr>
+            <th scope="row">{{a}}</th>
+            <td>{{b}}</td>
+           
+        </tr>
+        {%endfor %}
+        </tbody>
+        
+    </table>
+    
     {% endif %}
     <a href = '/result'>Click here to start Talking..</a>
+    <h6>Connect with your Microphone For better results</h6>
+    <footer>copyright owner @k.surendra</footer>
+   
+</div>
+<div class = "footer"></div>
+    </center></div>
+    
 </body>
 </html>
