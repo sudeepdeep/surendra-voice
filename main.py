@@ -11,14 +11,7 @@ from pydub.playback import play
 
 
 config = {
-	'apiKey': "AIzaSyDzdwqh2kIhL4YLnxucglvGqqHdpKjR_1U",
-  'authDomain': "kotha-surendra.firebaseapp.com",
-  'databaseURL': "https://kotha-surendra-default-rtdb.firebaseio.com",
-  'projectId': "kotha-surendra",
-  'storageBucket': "kotha-surendra.appspot.com",
-  'messagingSenderId': "534394550045",
-  'appId': "1:534394550045:web:a1c1715b1c72467e3d93f4",
-  'measurementId': "G-NNQJW3TTZL"
+'api stuff'
 }
 
 firebase = pyrebase.initialize_app(config)
